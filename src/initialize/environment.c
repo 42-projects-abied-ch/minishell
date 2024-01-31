@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   environment.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abied-ch <abied-ch@student.42.fr>          +#+  +:+       +#+        */
+/*   By: arthur <arthur@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 10:36:03 by abied-ch          #+#    #+#             */
-/*   Updated: 2023/11/26 21:34:51 by abied-ch         ###   ########.fr       */
+/*   Updated: 2024/01/31 15:35:58 by arthur           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	get_prompt(t_shell *data, size_t i)
 	{
 		if (cwd[i] == '/')
 		{
-			data->prompt = ft_strjoin(&cwd[i + 1], "$ ");
+			data->prompt = ft_strjoin(&cwd[i + 1], RED);
 			if (!data->prompt)
 				return (-1);
 			return (free(cwd), 0);
