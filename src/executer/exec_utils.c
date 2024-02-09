@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   exec_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arthur <arthur@student.42.fr>              +#+  +:+       +#+        */
+/*   By: abied-ch <abied-ch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 15:20:09 by abied-ch          #+#    #+#             */
-/*   Updated: 2023/12/21 06:47:03 by arthur           ###   ########.fr       */
+/*   Updated: 2024/01/03 19:10:46 by abied-ch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	close_pipe_init_fd(int *pipe_fd, t_cmd_table *head)
 
 int	is_builtin(t_shell *data, t_cmd_table *head, int *pipe_fd)
 {
-	if (head->infile != HEREDOCINT)
+	if (head->infile != HEREDOCINT && data->exit != CTRL_C)
 		data->exit = find_command(data, head);
 	if (data->exit == SUCCESS)
 	{
